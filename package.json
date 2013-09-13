@@ -1,0 +1,15 @@
+{
+	"name": "master_node_ui",
+	"description": "website for master program",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"express": "3.x",
+		"ejs": "*",
+		"java": "*",
+		"less": "*",
+		"less-middleware": "*",
+		"async": "*",
+		"mysql": "*"
+	}
+}
