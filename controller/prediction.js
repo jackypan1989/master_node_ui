@@ -4,7 +4,7 @@
     var async = require('async');
 
 	var pool = mysql.createPool({
-	  	host     : 'localhost',
+	  	host     : '140.112.107.1',
         database : 'master',
 	  	user     : 'root',
 	  	password : ''
