@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Patent Search Engine</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+
+    <script src="/javascripts/ejs.js" type="text/javascript"></script>
+    <script id="users" type="text/template">
+      <% if (names.length) { %>
+        <ul>
+          <% names.forEach(function(name){ %>
+            <li><%= name %></li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </script>
+    <script>
+      onload = function(){
+        var users = document.getElementById('users').innerHTML;
+        var names = ['loki', 'tobi', 'jane'];
+        var html = ejs.render(users, { names: names });
+        console.dir(html);
+        //document.body.innerHTML = html;
+      }
+    </script> 
+
+
+</head>
+
+<body>
+    <% include navbar %>
+    <div class="container">
+        <h1>Prediction</h1>
+        <div class="panel panel-default">
+            <div class="panel-heading">Step 1 : Choose a patent</div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <input type="text" class="form-control stepOneInput" value="4000471" name="pid">
+                </div>
+                </form>
+                <button class="btn btn-default stepOneBtn">Check Patent</button>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Step 2 : Check relative patents</div>
+            <div class="panel-body">
+                <form>
+                    <div class="form-group">
+                        <%= test %>
+                        <input type="checkbox" name="sport" value="running"><label>跑步</label>                    </div>
+                    <button class="btn btn-default">Calculate!</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+    
+    <script src="/javascripts/navbar.js" type="text/javascript"></script>
+    <script src="/javascripts/prediction.js" type="text/javascript"></script>
+</html>

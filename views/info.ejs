@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Patent Search Engine</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+
+</head>
+
+<body>
+    <% include navbar %>
+    <div class="container">
+
+        <% if (!err) { %>
+        <div class="panel panel-default">
+            <div class="panel-heading">Patent Info</div>
+            <div class="panel-body">
+                <p><strong>Patent</strong> : <%= content.patent_id %></p>
+                <p><strong>Title</strong> : <%= content.title %></p>
+                <p><strong>Issued Year</strong> : <%= content.issued_year %></p>
+                <p><strong>Issued Date</strong> : <%= content.issued_date %></p>
+                <p><strong>Inventors</strong> : <%= content.inventors %></p>
+                <p><strong>Assignee</strong> : <%= content.assignee %></p>
+                <p><strong>Backward Citation</strong> : <%= content['references cited'] %></p>
+                <p><strong>Abstract</strong> : <%= content.abstract %></p>
+                <p><strong>Claims</strong> : <%= content.claims %></p>
+                <p><strong>Description</strong> : <%= content.description %></p>
+                <p><strong>Summary</strong> : <%= content.summary %></p>
+            </div>
+        </div>
+        <% } else { %>
+        <div class="panel panel-danger">
+            <div class="panel-heading">Error Message</div>
+            <div class="panel-body">
+                <p><strong>No patent info!</strong></p>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</body>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+    
+    <script src="/javascripts/navbar.js" type="text/javascript"></script>
+  
+</html>

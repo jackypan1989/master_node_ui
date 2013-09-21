@@ -10,6 +10,7 @@
 		"less": "*",
 		"less-middleware": "*",
 		"async": "*",
-		"mysql": "*"
+		"mysql": "*",
+		"underscore": "*"
 	}
 }

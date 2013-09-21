@@ -15,17 +15,23 @@
 </head>
 
 <body>
-    <% include navbar %>    
-    <%- content %>
+    <% include navbar %>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">Dataset List</div>
+            <div class="panel-body">
+                <% for (var i = 0 ; i < datasets.length ; i++ ) { %>
+                <p><a href="/datasets/<%= datasets[i].dataset %>"><%= datasets[i].dataset %></a></p>
+                <% } %>
+            </div>
+        </div>
+    </div>
 </body>
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
-    <script>
-    $('nav .searchBtn').on('click',function(){
-        var id = $('nav .searchText').val();
-        console.log(id);
-    });
-    </script>
+    
+    <script src="/javascripts/navbar.js" type="text/javascript"></script>
+  
 </html>

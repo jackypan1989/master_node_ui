@@ -13,8 +13,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+            <li class="active"><a href="/datasets">DataSets</a></li>
+            <li><a href="/prediction">Prediction</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -27,11 +27,11 @@
             </li>
         </ul>
 
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-left" role="search" action="/searchById" method="post">
             <div class="form-group">
-                <input type="text" class="form-control" value="US8407502" placeholder="US8407502">
+                <input type="text" class="form-control" name="pid" value="4000471" placeholder="4000471">
             </div>
-            <button type="submit" class="btn btn-default">Patent Number Search</button>
+            <button class="btn btn-default">Patent Number Search</button>
         </form>
 
             <ul class="nav navbar-nav navbar-right">
