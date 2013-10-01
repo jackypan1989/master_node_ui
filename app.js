@@ -24,6 +24,7 @@ app.configure(function(){
 
 var patent = require("./controller/patent.js");
 var prediction = require("./controller/prediction.js");
+var test = require("./controller/test.js");
 
 // app.get('/', function(req, res){
 //     var java = require("java");
@@ -43,31 +44,13 @@ app.get('/datasets', patent.getAllDataSets);
 app.get('/datasets/:dataset_id', patent.getDataSet);
 
 app.get('/prediction', function(req, res) {
-    res.render('prediction', {test:null, names:[]});
+    res.render('prediction', {test:null});
 });
 
 app.post('/prediction/getRelatePatents', prediction.getRelatePatents);
+app.post('/prediction/getFeatures', prediction.getFeatures);
 
-app.get('/java', function(req,res){
-    // var java = require("java");
-    // java.classpath.push("commons-lang3-3.1.jar");
-    // java.classpath.push("commons-io.jar");
-
-    // var list = java.newInstanceSync("java.util.ArrayList");
-
-    // java.newInstance("java.util.ArrayList", function(err, list) {
-    //   list.addSync("item1");
-    //   list.addSync("item2");
-    // });
-
-    // var ArrayList = java.import('java.util.ArrayList');
-    // var list = new ArrayList();
-    // list.addSync('item1');
-
-    var java = require("java");
-    java.classpath.push("master.jar");
-    var classification = java.newInstanceSync("core.learning.Classification");
-});
+app.get('/java', test.javaTests);
 
 // app.get('/', patent.info);
 

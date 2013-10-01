@@ -3,7 +3,7 @@
     var _ = require('underscore');
 
 	var pool = mysql.createPool({
-	  	host     : '140.112.107.1',
+	  	host     : 'localhost',
         database : 'master',
 	  	user     : 'root',
 	  	password : ''
@@ -56,7 +56,9 @@
             var dataset_id = req.params.dataset_id;
             pool.getConnection(function(err, connection) {
                 // connected! (unless `err` is set)
-                var query = 'SELECT * FROM  `feature` WHERE dataset = "' + dataset_id + '"';
+                var query = 'SELECT * FROM `feature` AS A,  `uspto` AS B ' + 
+                            'WHERE A.patent_id = B.patent_id ' +
+                            'AND A.dataset = "' + dataset_id + '"';
                 connection.query( query, function(err, rows) {
                 // And done with the connection.
                     connection.release();

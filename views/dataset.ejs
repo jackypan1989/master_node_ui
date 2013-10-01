@@ -17,6 +17,7 @@
 <body>
     <% include navbar %>
     <div class="container">
+        <h1>Available Datasets</h1>
         <div class="panel panel-default">
             <div class="panel-heading">Dataset List</div>
             <div class="panel-body">
@@ -41,11 +42,12 @@
                         <thead>
                           <tr>
                             <th>#</th>
+                            <th>date</th>
                             <th>backward_citation</th>
                             <th>science_linkage</th>
                             <th>uspc_originality</th>
                             <th>sim_bc_structure</th>
-                            <th>novelty_sao</th>
+                            <!-- <th>novelty_sao</th> -->
                             <th>novelty_vsm</th>
                             <th>novelty_lsa</th>
                             <th>novelty_plsa</th>
@@ -55,11 +57,12 @@
                             <% for (var i = 0 ; i < patents.length ; i++) { %>
                             <tr>
                                 <td><%= patents[i].patent_id %></td>
+                                <td><%= patents[i].issued_date %> ,<%= patents[i].issued_year %></td>
                                 <td><%= patents[i].backward_citation %></td>
                                 <td><%= patents[i].science_linkage %></td>
                                 <td><%= patents[i].uspc_originality.toFixed(3) %></td>
                                 <td><%= patents[i].sim_bc_structure.toFixed(3) %></td>
-                                <td><%= patents[i].novelty_sao.toFixed(3) %></td> 
+                                <!-- <td><%= patents[i].novelty_sao.toFixed(3) %></td>  -->
                                 <td><%= patents[i].novelty_vsm.toFixed(3) %></td> 
                                 <td><%= patents[i].novelty_lsa.toFixed(3) %></td> 
                                 <td><%= patents[i].novelty_plsa.toFixed(3) %></td> 
